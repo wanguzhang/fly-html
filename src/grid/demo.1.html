@@ -1,47 +1,61 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X - UA - Compatible " content="ie = edge " />
-    <link rel="icon" type="image/jpeg" href="./favicon.ico" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
     <style>
-        .container {
+        #container {
             display: grid;
-            grid-template-columns: repeat(3, 50px);
-            grid-template-rows: repeat(3, 50px);
-            row-gap: 20px;
-            column-gap: 20px;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            row-gap: 10px;
+            column-gap: 10px;
+            width: 320px;
+            background-color: aqua;
+            grid-template-areas: 'a b c''d e f''g h i';
         }
 
         .item {
-            font-size: 2em;
-            text-align: center;
+            font-size: 4em;
+            justify-content: center;
             border: 1px solid #e5e4e9;
         }
 
         .item-1 {
             background-color: #ef342a;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-end: 4;
+            grid-row-start: 1;
         }
 
         .item-2 {
             background-color: #f68f26;
+            grid-column-start: 1;
+            grid-column-end: 3;
         }
 
         .item-3 {
             background-color: #4ba946;
+            grid-row-start: 1;
+            grid-row-end: 3;
         }
 
         .item-4 {
             background-color: #0376c2;
+            grid-row-start: 3;
+            grid-row-end: 6;
         }
 
         .item-5 {
             background-color: #c077af;
+            grid-column-start: 1;
+            grid-column-end: 3;
         }
 
-        .item-6 {
+        /* .item-6 {
             background-color: #f8d29d;
         }
 
@@ -55,26 +69,22 @@
 
         .item-9 {
             background-color: #4dc7ec;
-        }
+        } */
     </style>
-    <title>Grid 布局</title>
 </head>
 
 <body>
-    <span>foo</span>
-    <div class="container">
+    <div id="container">
         <div class="item item-1">1</div>
         <div class="item item-2">2</div>
         <div class="item item-3">3</div>
         <div class="item item-4">4</div>
         <div class="item item-5">5</div>
-        <div class="item item-6">6</div>
+        <!-- <div class="item item-6">6</div>
         <div class="item item-7">7</div>
         <div class="item item-8">8</div>
-        <div class="item item-9">9</div>
+        <div class="item item-9">9</div> -->
     </div>
-    <span>bar</span>
 </body>
-<script src="./src/index.js"></script>
 
 </html>

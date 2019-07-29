@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+        .container {
+            display: grid;
+            width: 150px;
+            height: 150px;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+                "a a a"
+                "b c c"
+                "b d d"
+        }
+
+        .container .item-a {
+            grid-area: a;
+            background: dodgerblue;
+        }
+
+        .container .item-b {
+            grid-area: b;
+            background: green;
+        }
+
+        .container .item-c {
+            grid-area: c;
+            background: yellow;
+        }
+
+        .container .item-d {
+            grid-area: d;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item item-a">
+            <span>a</span></div>
+        <div class="item item-b"><span>b</span></div>
+        <div class="item item-c"><span>c</span></div>
+        <div class="item item-d"><span>d</span></div>
+    </div>
+</body>
+
+</html>
