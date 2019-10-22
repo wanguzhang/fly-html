@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X - UA - Compatible " content="ie = edge ">
+    <title>测试iframe</title>
+    <style>
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ceshi1">主页面</div>
+    <div id="ceshi2"></div>
+    <iframe id="3d" src="http://127.0.0.1:5500/index.html"></iframe>
+    <script>
+        const iFrame = document.getElementById('3d');
+        setInterval(() => {
+            iFrame.contentWindow.postMessage({ data: Math.random() }, '*');
+        }, 1000);
+        window.addEventListener("message", event => {
+            console.log(event);
+            document.getElementById('ceshi2').innerHTML = JSON.stringify(event.data);
+        }, false);
+    </script>
+</body>
+
+</html>
