@@ -1,48 +1,3 @@
-# fly-html
-html/css
-
-## 事件
-
-```html
-<div>
-    <button></button>
-</div>
-```
-
-冒泡处理：从触发的 dom ,向上冒泡处理。button->div->body->html
-
-捕获处理：与冒泡处理相反。html->body->div->button
-
-### 事件分类
-
-```html
-<button id="btn"></button>
-```
-
-- dom0 级事件添加
-```js
-// dom0 级事件添加，只能绑定一个事件
-const btn = document.getElementById('btn');
-btn.onclick = (e) => {
-  console.log(e);
-  alert(e.target.value);
-};
-```
-- dom2 级事件添加
-
-```js
-// dom2 级事件添加，可以绑定多个
-const btn2 = document.getElementById('btn2');
-btn2.addEventListener('click', (e) => {
-  alert(e.target.value + '11');
-});
-```
-
-- ie 事件添加
-
-### 事件处理
-
-```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -80,13 +35,5 @@ btn2.addEventListener('click', (e) => {
         });
     </script>
 </body>
+
 </html>
-```
-
-e.target:获得触发事件的目标对象
-
-e.type: 获取事件类型
-
-e.preventDefault：阻止事件的默认行为
-
-e.stopPropagation()：阻止事件传播
